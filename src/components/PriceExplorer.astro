@@ -1,6 +1,7 @@
 ---
 import { prices, formatCny } from '../lib/data';
 const data = prices;
+const apiBase = import.meta.env.PUBLIC_API_BASE || '';
 ---
 <section class="panel overflow-hidden" data-price-explorer>
   <div class="flex flex-col gap-3 border-b border-slate-800 p-4 sm:flex-row sm:items-center sm:justify-between">
@@ -11,14 +12,17 @@ const data = prices;
   </div>
   <div class="overflow-x-auto" data-table-view><table class="min-w-[900px] w-full text-left text-sm"><thead class="bg-slate-900/90 text-xs uppercase tracking-wide text-slate-400"><tr><th class="px-4 py-3">地区 / 套餐</th><th class="px-4 py-3">公开标价</th><th class="px-4 py-3">美元估算</th><th class="px-4 py-3">人民币估算</th><th class="px-4 py-3">税费与渠道</th><th class="px-4 py-3">可信度</th><th class="px-4 py-3">核验</th></tr></thead><tbody data-price-body class="divide-y divide-slate-800"></tbody></table></div>
   <div data-card-view class="hidden grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+  <p data-live-status class="border-t border-slate-800 px-4 py-2 text-xs text-slate-500">汇率折算使用页面快照数据。</p>
 </section>
-<script define:vars={{ data, base: import.meta.env.BASE_URL }}>
+<script define:vars={{ data, base: import.meta.env.BASE_URL, apiBase }}>
   const root = document.querySelector('[data-price-explorer]');
+  const liveStatus = root.querySelector('[data-live-status]');
+  let currentData = data;
   let selected = '', view = 'table', sort = 'cny';
   const currency = (p) => `${p.price.toLocaleString('zh-CN')} ${p.currency}`;
   const route = (slug) => `${base.replace(/\/$/, '')}/prices/${slug}/`;
   function render() {
-    let rows = data.filter(p => !selected || p.plan === selected);
+    let rows = currentData.filter(p => !selected || p.plan === selected);
     rows.sort((a,b) => sort === 'region' ? a.region.localeCompare(b.region, 'zh-CN') : sort === 'currency' ? a.currency.localeCompare(b.currency) : a.cny - b.cny);
     const label = (p) => `<span class="inline-flex rounded-full bg-slate-800 px-2 py-1 text-xs ${p.confidence === '官方公开价' ? 'text-cyan-300' : 'text-amber-300'}">${p.confidence}</span>`;
     root.querySelector('[data-price-body]').innerHTML = rows.map(p => `<tr class="hover:bg-slate-800/35"><td class="px-4 py-3"><a class="font-semibold text-white hover:text-cyan-300" href="${route(p.regionSlug)}">${p.region}</a><div class="text-xs text-slate-500">ChatGPT ${p.plan}</div></td><td class="px-4 py-3 text-slate-200">${currency(p)}</td><td class="px-4 py-3">US$${p.usd.toFixed(1)}</td><td class="px-4 py-3 font-semibold text-white">¥${p.cny}</td><td class="max-w-xs px-4 py-3 text-xs text-slate-400">${p.taxNote}<br/>${p.channelNote}</td><td class="px-4 py-3">${label(p)}</td><td class="px-4 py-3 text-xs text-slate-400"><a class="text-cyan-300 hover:underline" target="_blank" rel="noreferrer" href="${p.source}">${p.sourceName}</a><br/>${p.verifiedAt}</td></tr>`).join('');
@@ -26,5 +30,18 @@ const data = prices;
   }
   root.querySelectorAll('.filter-plan').forEach(el => el.addEventListener('click', () => { selected = el.dataset.plan; root.querySelectorAll('.filter-plan').forEach(x => x.className = 'filter-plan rounded-lg bg-slate-800 px-3 py-1.5 text-sm text-slate-300 hover:bg-slate-700'); el.className = 'filter-plan rounded-lg bg-cyan-400 px-3 py-1.5 text-sm font-semibold text-slate-950'; render(); }));
   root.querySelectorAll('.view-button').forEach(el => el.addEventListener('click', () => { view = el.dataset.view; root.querySelector('[data-table-view]').classList.toggle('hidden', view !== 'table'); root.querySelector('[data-card-view]').classList.toggle('hidden', view !== 'cards'); root.querySelectorAll('.view-button').forEach(x => x.className = 'view-button rounded-lg px-3 py-1.5 text-sm text-slate-400'); el.className='view-button rounded-lg bg-slate-800 px-3 py-1.5 text-sm text-white'; }));
-  root.querySelector('[data-sort]').addEventListener('change', e => { sort = e.target.value; render(); }); render();
+  root.querySelector('[data-sort]').addEventListener('change', e => { sort = e.target.value; render(); });
+  async function loadLivePrices() {
+    if (!apiBase) return;
+    try {
+      const response = await fetch(`${apiBase.replace(/\/$/, '')}/v1/prices/live`);
+      if (!response.ok) throw new Error('实时接口不可用');
+      const payload = await response.json();
+      if (!Array.isArray(payload.items)) throw new Error('实时数据格式异常');
+      currentData = payload.items;
+      liveStatus.textContent = `实时汇率折算 · 参考日 ${payload.rateDate} · ${payload.cached ? '缓存数据' : '刚刚更新'}`;
+      render();
+    } catch { liveStatus.textContent = '实时汇率暂不可用，已显示页面快照数据。'; }
+  }
+  render(); loadLivePrices();
 </script>
