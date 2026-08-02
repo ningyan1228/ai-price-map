@@ -23,7 +23,7 @@
 
 ## 本地运行
 
-需要 Node.js 20 或更高版本。
+需要 Node.js 22 或更高版本。
 
 ```bash
 pnpm install
@@ -90,7 +90,7 @@ pnpm update:news   # 公开 RSS；失败时保留当前 news.json
 
 ## 可选：个人服务器 API 代理
 
-静态站本身可独立使用，代理挂掉也不会令首页报错。代理仅提供：`GET /health`、`GET /v1/rates?base=USD`、`GET /v1/data/{prices|price-history|news|tools|sources}`。它不抓取登录内容、不保存用户信息、不暴露密钥。
+静态站本身可独立使用，代理挂掉也不会令首页报错。代理仅提供：`GET /health`、`GET /v1/rates?base=USD`。它只代理公开汇率并做内存缓存、限流；不保存新闻或价格 JSON、不抓取登录内容、不保存用户信息、不暴露密钥。
 
 本项目按现有服务器约定使用腾讯云 Ubuntu 22.04、Docker Compose 和 `nginx-proxy`/`acme-companion` 外部网络 `web`。部署前将 `server/docker-compose.yml` 中的域名、邮箱和 `ALLOWED_ORIGIN` 改为真实值。
 

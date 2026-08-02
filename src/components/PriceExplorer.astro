@@ -34,12 +34,15 @@ const apiBase = import.meta.env.PUBLIC_API_BASE || '';
   async function loadLivePrices() {
     if (!apiBase) return;
     try {
-      const response = await fetch(`${apiBase.replace(/\/$/, '')}/v1/prices/live`);
+      const response = await fetch(`${apiBase.replace(/\/$/, '')}/v1/rates?base=USD`);
       if (!response.ok) throw new Error('实时接口不可用');
       const payload = await response.json();
-      if (!Array.isArray(payload.items)) throw new Error('实时数据格式异常');
-      currentData = payload.items;
-      liveStatus.textContent = `实时汇率折算 · 参考日 ${payload.rateDate} · ${payload.cached ? '缓存数据' : '刚刚更新'}`;
+      if (!payload.rates?.CNY) throw new Error('实时汇率格式异常');
+      currentData = data.map((price) => {
+        const usd = price.currency === 'USD' ? price.price : price.price / payload.rates[price.currency];
+        return { ...price, usd: Number(usd.toFixed(2)), cny: Number((usd * payload.rates.CNY).toFixed(0)), verifiedAt: payload.date };
+      });
+      liveStatus.textContent = `实时汇率折算 · 参考日 ${payload.date} · ${payload.cached ? '缓存数据' : '刚刚更新'}`;
       render();
     } catch { liveStatus.textContent = '实时汇率暂不可用，已显示页面快照数据。'; }
   }
