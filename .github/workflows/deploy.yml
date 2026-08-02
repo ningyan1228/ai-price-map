@@ -29,7 +29,7 @@ jobs:
       - name: Build static site
         run: pnpm build
         env:
-          SITE_URL: https://ningyan1228.github.io/ai-price-map
+          SITE_URL: https://ai-price-map.101921.xyz
           BASE_PATH: /ai-price-map
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
