@@ -1,6 +1,6 @@
 [
   {"name":"OpenAI Pricing","type":"价格","url":"https://openai.com/chatgpt/pricing/","notes":"优先使用公开定价页，地区差异以结算页为准。"},
-  {"name":"OpenAI News","type":"新闻","url":"https://openai.com/news/","notes":"官方公开新闻。"},
+  {"name":"OpenAI News","type":"新闻","url":"https://openai.com/news/","feedUrl":"https://openai.com/news/rss.xml","tags":["OpenAI"],"enabled":true,"notes":"OpenAI 官方公开 RSS，仅聚合标题、日期和链接。"},
   {"name":"Anthropic News","type":"新闻","url":"https://www.anthropic.com/news","notes":"官方公开新闻。"},
-  {"name":"Google AI Blog","type":"新闻","url":"https://blog.google/technology/ai/","notes":"官方公开博客。"}
+  {"name":"Google AI Blog","type":"新闻","url":"https://blog.google/technology/ai/","feedUrl":"https://blog.google/technology/ai/rss/","tags":["Google"],"enabled":true,"notes":"Google 官方 AI 博客 RSS，仅聚合标题、日期和链接。"}
 ]

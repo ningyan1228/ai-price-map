@@ -1,10 +1,314 @@
 [
-  {"slug":"openai-pricing-reference","title":"OpenAI 更新 ChatGPT 定价信息页","source":"OpenAI","sourceUrl":"https://openai.com/chatgpt/pricing/","publishedAt":"2026-08-01T08:30:00Z","companies":["OpenAI","价格"],"category":"价格调整","summary":"官方定价页持续更新套餐能力与面向个人、团队的订阅说明；不同地区的最终价格仍应以结算页为准。","importance":9},
-  {"slug":"anthropic-product-updates","title":"Anthropic 发布产品更新汇总","source":"Anthropic News","sourceUrl":"https://www.anthropic.com/news","publishedAt":"2026-08-01T04:00:00Z","companies":["Anthropic","产品"],"category":"产品更新","summary":"官方新闻页更新了 Claude 产品能力与服务信息，适合关注模型使用体验和企业部署的读者查看原文。","importance":8},
-  {"slug":"google-ai-updates","title":"Google AI 公布最新产品动态","source":"Google Blog","sourceUrl":"https://blog.google/technology/ai/","publishedAt":"2026-07-31T15:00:00Z","companies":["Google","模型"],"category":"产品更新","summary":"Google 在官方 AI 博客发布产品与研究动态，本条仅整理公开标题和链接，不转载全文。","importance":8},
-  {"slug":"meta-ai-news","title":"Meta AI 更新开源与研究信息","source":"Meta AI","sourceUrl":"https://ai.meta.com/blog/","publishedAt":"2026-07-31T10:00:00Z","companies":["Meta","开源"],"category":"开源项目","summary":"Meta AI 官方博客发布模型、研究和开源生态相关消息，详细技术信息请查看原始公告。","importance":7},
-  {"slug":"xai-news","title":"xAI 公开产品新闻与状态更新","source":"xAI","sourceUrl":"https://x.ai/news","publishedAt":"2026-07-30T16:00:00Z","companies":["xAI","产品"],"category":"产品更新","summary":"xAI 新闻页公布产品更新和公告；本网站只呈现公开信息的中文摘要与来源。","importance":7},
-  {"slug":"alibaba-cloud-ai","title":"阿里云人工智能平台发布公开更新","source":"阿里云","sourceUrl":"https://www.alibabacloud.com/blog","publishedAt":"2026-07-30T06:00:00Z","companies":["阿里","模型"],"category":"模型发布","summary":"阿里云官方博客持续披露模型服务与平台更新，面向开发者的定价和能力以官方页面为准。","importance":7},
-  {"slug":"tencent-cloud-ai","title":"腾讯云 AI 产品公告更新","source":"腾讯云","sourceUrl":"https://cloud.tencent.com/developer","publishedAt":"2026-07-29T09:00:00Z","companies":["腾讯","产品"],"category":"产品更新","summary":"腾讯云开发者社区发布 AI 产品与应用实践相关内容，本站会在抓取任务中按规则筛选重要公告。","importance":6},
-  {"slug":"bytedance-ai","title":"字节跳动 AI 公开产品动态","source":"火山引擎","sourceUrl":"https://www.volcengine.com/","publishedAt":"2026-07-29T03:00:00Z","companies":["字节","应用"],"category":"应用案例","summary":"火山引擎公开页面更新模型和云服务信息；本条为 MVP 示例，实际部署后由合规来源抓取任务覆盖。","importance":6}
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l3rlbi1hzh",
+    "title": "Ten advances in mathematics and theoretical computer science",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/ten-advances-in-mathematics",
+    "publishedAt": "2026-08-01T00:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Ten advances in mathematics and theoretical computer science”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2fkdmfuy2",
+    "title": "Advancing responsible AI across Europe",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/advancing-responsible-ai-across-europe",
+    "publishedAt": "2026-07-31T15:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Advancing responsible AI across Europe”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2j1awxkaw",
+    "title": "Building abundant intelligence",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/building-abundant-intelligence",
+    "publishedAt": "2026-07-31T15:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Building abundant intelligence”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l3vuaxzl",
+    "title": "Univé builds an AI-ready workforce",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/unive",
+    "publishedAt": "2026-07-31T07:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Univé builds an AI-ready workforce”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2rpc3j1ch",
+    "title": "Disrupting a Criminal Scam Operation",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+    "publishedAt": "2026-07-31T00:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Disrupting a Criminal Scam Operation”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2fkdmfuy2",
+    "title": "Advancing the price-performance frontier with GPT-5.6",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+    "publishedAt": "2026-07-30T10:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "价格调整",
+    "summary": "OpenAI News发布官方更新，主题为“Advancing the price-performance frontier with GPT-5.6”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2f2yxrhcm",
+    "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/avatarin",
+    "publishedAt": "2026-07-30T00:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "模型发布",
+    "summary": "OpenAI News发布官方更新，主题为“How avatarin built a 24/7 retail agent with GPT-Realtime”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2hvdy10d2",
+    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+    "publishedAt": "2026-07-29T15:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“How enabling two settings tripled our scores on the ARC-AGI-3 benchmark”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2noyxrnch",
+    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/chatgpt-for-academic-researchers",
+    "publishedAt": "2026-07-29T10:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "模型发布",
+    "summary": "OpenAI News发布官方更新，主题为“Accelerating scientific discovery with ChatGPT for Academic Researchers”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2dwdc01lt",
+    "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+    "publishedAt": "2026-07-29T00:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "模型发布",
+    "summary": "OpenAI News发布官方更新，主题为“How GPT-5.6 fuses frontier intelligence with frontier efficiency”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l3njawvudg",
+    "title": "Scientific computing in the age of agentic AI",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/scientific-computing-agentic-ai",
+    "publishedAt": "2026-07-28T17:00:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“Scientific computing in the age of agentic AI”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9pbm5vdmf0aw9ulw",
+    "title": "Gemini API Managed Agents: 3.6 Flash, hooks, and more",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+    "publishedAt": "2026-07-28T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "模型发布",
+    "summary": "Google AI Blog发布官方更新，主题为“Gemini API Managed Agents: 3.6 Flash, hooks, and more”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "5 ways AI Mode in Search helps you enjoy the real world",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+    "publishedAt": "2026-07-28T13:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“5 ways AI Mode in Search helps you enjoy the real world”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "5 ways to host the ultimate dinner party with Google Search",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
+    "publishedAt": "2026-07-28T13:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“5 ways to host the ultimate dinner party with Google Search”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9vcgvuywkuy29tl2luzgv4l2hvdy1has",
+    "title": "How AI is expanding what people do at work",
+    "source": "OpenAI News",
+    "sourceUrl": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+    "publishedAt": "2026-07-27T03:30:00.000Z",
+    "companies": [
+      "OpenAI"
+    ],
+    "category": "产品更新",
+    "summary": "OpenAI News发布官方更新，主题为“How AI is expanding what people do at work”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "3 Google updates from Galaxy Unpacked 2026",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
+    "publishedAt": "2026-07-22T13:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“3 Google updates from Galaxy Unpacked 2026”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "Connect more of your apps to Search",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+    "publishedAt": "2026-07-16T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“Connect more of your apps to Search”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "Create, edit and star in videos with two Google Vids updates",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+    "publishedAt": "2026-07-16T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“Create, edit and star in videos with two Google Vids updates”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "Celebrating 25 years of visual search innovation",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
+    "publishedAt": "2026-07-14T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“Celebrating 25 years of visual search innovation”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9pbm5vdmf0aw9ulw",
+    "title": "Expanding Managed Agents in Gemini API:  background tasks, remote MCP and more",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+    "publishedAt": "2026-07-07T08:54:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "模型发布",
+    "summary": "Google AI Blog发布官方更新，主题为“Expanding Managed Agents in Gemini API: background tasks, remote MCP and”。本页仅整理公开信息，请通过原文链接核验完整",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9pbm5vdmf0aw9ulw",
+    "title": "The latest AI news we announced in June 2026",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+    "publishedAt": "2026-07-01T18:15:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“The latest AI news we announced in June 2026”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9wcm9kdwn0cy1hbm",
+    "title": "New York City educators and industry leaders gathered at Google’s offices to shape the future of AI in classrooms.",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+    "publishedAt": "2026-07-01T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“New York City educators and industry leaders gathered at Google’s office”。本页仅整理公开信息，请通过原文链接核验完整",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9jb21wyw55lw5ld3",
+    "title": "Unlocking Britain’s next era of productivity: Building a nation of AI trailblazers",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/unlocking-britains-next-era-of-productivity-building-a-nation-of-ai-trailblazers/",
+    "publishedAt": "2026-06-30T06:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“Unlocking Britain’s next era of productivity: Building a nation of AI tr”。本页仅整理公开信息，请通过原文链接核验完整",
+    "importance": 6
+  },
+  {
+    "slug": "rss-ahr0chm6ly9ibg9nlmdvb2dszs9pbm5vdmf0aw9ulw",
+    "title": "Ask an AI expert: What exactly is the full stack?",
+    "source": "Google AI Blog",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/",
+    "publishedAt": "2026-06-29T16:00:00.000Z",
+    "companies": [
+      "Google"
+    ],
+    "category": "产品更新",
+    "summary": "Google AI Blog发布官方更新，主题为“Ask an AI expert: What exactly is the full stack?”。本页仅整理公开信息，请通过原文链接核验完整内容。",
+    "importance": 6
+  }
 ]
