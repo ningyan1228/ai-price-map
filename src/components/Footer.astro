@@ -1,0 +1,4 @@
+---
+const path = (value: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${value}`;
+---
+<footer class="border-t border-slate-800 bg-slate-950/50"><div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><p>© {new Date().getFullYear()} AI价格地图 · 公开信息整理，仅供参考。</p><div class="flex gap-4"><a href={path('/about/')} class="hover:text-slate-300">数据说明</a><a href={path('/about/#disclaimer')} class="hover:text-slate-300">免责声明</a><a href={path('/about/#sources')} class="hover:text-slate-300">来源与方法</a></div></div></footer>

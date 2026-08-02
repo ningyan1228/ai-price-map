@@ -1,0 +1,12 @@
+import pricesData from '../../data/prices.json';
+import newsData from '../../data/news.json';
+import toolsData from '../../data/tools.json';
+import historyData from '../../data/price-history.json';
+import type { Price, News, Tool, PriceHistory } from './types';
+export const prices = pricesData as Price[];
+export const news = (newsData as News[]).sort((a,b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
+export const tools = toolsData as Tool[];
+export const history = historyData as PriceHistory[];
+export const formatCny = (value: number) => `¥${value.toLocaleString('zh-CN', { maximumFractionDigits: 0 })}`;
+export const formatDate = (date: string) => new Intl.DateTimeFormat('zh-CN', { month: 'short', day: 'numeric' }).format(new Date(date));
+export const latestUpdated = prices.reduce((latest, p) => p.verifiedAt > latest ? p.verifiedAt : latest, '');

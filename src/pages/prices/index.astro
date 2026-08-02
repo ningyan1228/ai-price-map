@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import PriceExplorer from '../../components/PriceExplorer.astro'; import { latestUpdated } from '../../lib/data';
+---
+<BaseLayout title="GPT 全球价格地图｜AI价格地图" description="查询 ChatGPT Plus、Pro、Business 在不同国家与地区的公开标价、人民币估算及税费说明。"><section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"><p class="eyebrow">ChatGPT pricing</p><h1 class="mt-2 text-4xl font-bold text-white">GPT 全球价格地图</h1><p class="mt-4 max-w-3xl text-slate-400">按套餐、地区和价格浏览公开信息。当前已收录首期 12 个地区，数据最近核验于 {latestUpdated}。</p><div class="mt-7 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6 text-amber-100">本页展示公开标价、税费估算和用户实测参考。实际支付金额可能因账户所在地、税费、支付渠道、App Store 或 Google Play 定价、汇率及平台政策而不同，请以结算页面为准。</div><div class="mt-7"><PriceExplorer/></div><p class="mt-5 text-xs leading-5 text-slate-500">本站不提供、更不鼓励任何绕过地区限制、虚假地址、代充、规避税费或违反平台规则的方式。价格仅用于公开信息比较。</p></section></BaseLayout>

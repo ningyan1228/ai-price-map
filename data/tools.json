@@ -1,0 +1,8 @@
+[
+  {"slug":"chatgpt","name":"ChatGPT","free":true,"monthlyPrice":"Plus US$20/月起","strength":"通用对话、写作、多模态与生态整合","audience":"需要通用 AI 助手的个人与团队","url":"https://chatgpt.com/pricing"},
+  {"slug":"claude","name":"Claude","free":true,"monthlyPrice":"Pro US$20/月起","strength":"长文理解、分析与写作","audience":"重视深度阅读和文本工作的用户","url":"https://www.anthropic.com/pricing"},
+  {"slug":"gemini","name":"Gemini","free":true,"monthlyPrice":"Google AI Pro 因地区而异","strength":"Google 服务整合、多模态","audience":"常用 Google Workspace 的用户","url":"https://one.google.com/about/plans"},
+  {"slug":"perplexity","name":"Perplexity","free":true,"monthlyPrice":"Pro US$20/月起","strength":"联网检索与来源引用","audience":"研究、信息检索需求较多的用户","url":"https://www.perplexity.ai/pro"},
+  {"slug":"cursor","name":"Cursor","free":true,"monthlyPrice":"Pro US$20/月起","strength":"AI 编程与代码库协作","audience":"日常写代码的开发者","url":"https://www.cursor.com/pricing"},
+  {"slug":"midjourney","name":"Midjourney","free":false,"monthlyPrice":"Basic US$10/月起","strength":"图像创作与风格控制","audience":"有视觉创作需求的用户","url":"https://www.midjourney.com/pricing"}
+]

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { background: #070b16; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #070b16; color: #e6edf8; }
+* { box-sizing: border-box; }
+a { text-decoration: none; }
+.grid-bg { background-image: linear-gradient(rgba(148,163,184,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.055) 1px, transparent 1px); background-size: 36px 36px; }
+.panel { @apply rounded-2xl border border-slate-800/90 bg-slate-900/55 shadow-panel backdrop-blur-sm; }
+.eyebrow { @apply text-xs font-semibold tracking-[.18em] text-cyan-300 uppercase; }
+.chip { @apply inline-flex items-center rounded-full border border-slate-700 bg-slate-800/70 px-2.5 py-1 text-xs text-slate-300; }
+.section-title { @apply text-2xl font-bold tracking-tight text-white sm:text-3xl; }

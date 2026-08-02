@@ -1,0 +1,22 @@
+services:
+  ai-price-map-api:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    container_name: ai-price-map-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      PORT: ${PORT:-8787}
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN}
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    expose:
+      - "8787"
+    networks:
+      - web
+networks:
+  web:
+    external: true

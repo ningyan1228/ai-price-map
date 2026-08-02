@@ -1,0 +1,6 @@
+[
+  {"name":"OpenAI Pricing","type":"价格","url":"https://openai.com/chatgpt/pricing/","notes":"优先使用公开定价页，地区差异以结算页为准。"},
+  {"name":"OpenAI News","type":"新闻","url":"https://openai.com/news/","notes":"官方公开新闻。"},
+  {"name":"Anthropic News","type":"新闻","url":"https://www.anthropic.com/news","notes":"官方公开新闻。"},
+  {"name":"Google AI Blog","type":"新闻","url":"https://blog.google/technology/ai/","notes":"官方公开博客。"}
+]

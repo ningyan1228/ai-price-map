@@ -1,0 +1,9 @@
+[
+  {"priceId":"jp-plus","date":"2026-07-01","price":3000,"currency":"JPY","cny":142,"changeType":"汇率","source":"公开汇率参考","note":"人民币折算价随日元变动。"},
+  {"priceId":"jp-plus","date":"2026-07-15","price":3000,"currency":"JPY","cny":145,"changeType":"汇率","source":"公开汇率参考","note":"人民币折算价上调。"},
+  {"priceId":"jp-plus","date":"2026-08-01","price":3000,"currency":"JPY","cny":147,"changeType":"汇率","source":"公开汇率参考","note":"本周累计约上涨 3.2%。"},
+  {"priceId":"us-plus","date":"2026-07-01","price":20,"currency":"USD","cny":143,"changeType":"汇率","source":"公开汇率参考","note":"美元兑人民币变动。"},
+  {"priceId":"us-plus","date":"2026-08-01","price":20,"currency":"USD","cny":144,"changeType":"汇率","source":"公开汇率参考","note":"折算值更新。"},
+  {"priceId":"tr-plus","date":"2026-07-01","price":499.99,"currency":"TRY","cny":94,"changeType":"汇率","source":"公开汇率参考","note":"里拉汇率变动。"},
+  {"priceId":"tr-plus","date":"2026-08-01","price":499.99,"currency":"TRY","cny":89,"changeType":"汇率","source":"公开汇率参考","note":"人民币成本下降。"}
+]
