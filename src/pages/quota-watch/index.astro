@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import watchData from '../../../data/quota-watch.json';
+
+const formatTime = (value: string) => new Intl.DateTimeFormat('zh-CN', {
+  timeZone: 'Asia/Shanghai', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+}).format(new Date(value)).replace(',', ' ') + '（北京时间）';
+---
+
+<BaseLayout title="Codex / ChatGPT Work 额度观察｜AI价格地图" description="记录可核验的 Codex 与 ChatGPT Work 额度重置信号，并根据原帖明确时间窗提供非官方预测。">
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="eyebrow">Quota watch</p>
+    <h1 class="mt-2 text-4xl font-bold text-white">Codex / ChatGPT Work 额度观察</h1>
+    <p class="mt-4 max-w-3xl text-slate-400">仅根据公开来源记录额度重置信号。原帖明确给出时间时，页面换算为北京时间窗口；没有明确承诺时，不编造预测。</p>
+    <div class="mt-7 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-6 text-amber-100">{watchData.scopeNotice} 实际额度、适用套餐与到账时间请以产品内页面和官方通知为准。</div>
+
+    <div class="mt-8 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
+      <article class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">最新公开信号</p><div class="mt-2 flex flex-wrap items-center justify-between gap-3"><h2 class="text-2xl font-bold text-white">已确认：额度重置</h2><span class="rounded-full bg-emerald-400/15 px-3 py-1 text-sm font-semibold text-emerald-300">已确认</span></div><p class="mt-5 leading-7 text-slate-300">{watchData.latest.summary}</p><dl class="mt-6 grid gap-4 border-y border-slate-800 py-5 text-sm sm:grid-cols-2"><div><dt class="text-slate-500">适用范围</dt><dd class="mt-1 font-medium text-white">{watchData.latest.scope}</dd></div><div><dt class="text-slate-500">原帖时间</dt><dd class="mt-1 font-medium text-white">{formatTime(watchData.latest.postedAt)}</dd></div></dl><a class="mt-5 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200" href={watchData.latest.sourceUrl} target="_blank" rel="noreferrer">查看公开原帖 ↗</a></article>
+      <aside class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">原帖时间窗口</p><h2 class="mt-2 text-xl font-bold leading-8 text-white">{formatTime(watchData.latest.windowStart)}<br/>至<br/>{formatTime(watchData.latest.windowEnd)}</h2><p class="mt-4 text-sm leading-6 text-slate-400">{watchData.latest.reason}</p><p class="mt-5 text-sm font-semibold text-cyan-300">置信度：{watchData.latest.confidence}</p></aside>
+    </div>
+
+    <section class="mt-8 panel p-6"><p class="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">下一次重置</p><h2 class="mt-2 text-2xl font-bold text-white">{watchData.nextForecast.label}</h2><p class="mt-3 text-sm leading-6 text-slate-400">{watchData.nextForecast.reason}</p></section>
+    <section class="mt-8"><p class="eyebrow">Method</p><h2 class="mt-2 text-2xl font-bold text-white">预测规则</h2><div class="mt-5 grid gap-4 md:grid-cols-3">{watchData.predictionRules.map((rule) => <article class="panel p-5"><p class="text-sm font-semibold text-white">{rule.signal}</p><p class="mt-4 text-lg font-bold text-cyan-300">{rule.output}</p><p class="mt-2 text-xs text-slate-500">置信度：{rule.confidence}</p></article>)}</div><p class="mt-5 text-xs leading-5 text-slate-500">来源：{watchData.source.name}（{watchData.source.handle}），{watchData.source.sourceType}。不使用登录态、不绕过平台限制；历史相关性不代表未来一定会发生。</p></section>
+  </section>
+</BaseLayout>

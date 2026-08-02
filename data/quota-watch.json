@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-07-25T19:17:00Z",
+  "scopeNotice": "本页只跟踪 Codex 与 ChatGPT Work 的公开额度信号；不等同于所有 ChatGPT Plus、Pro 或其他产品的常规滚动额度。",
+  "source": {
+    "name": "Tibo Sottiaux",
+    "handle": "@thsottiaux",
+    "profileUrl": "https://x.com/thsottiaux",
+    "sourceType": "公开 X 帖子；非 OpenAI 产品公告页"
+  },
+  "latest": {
+    "status": "confirmed",
+    "postedAt": "2026-07-21T16:47:15Z",
+    "sourceUrl": "https://x.com/thsottiaux/status/2079609157934886975",
+    "summary": "公开帖称：Codex 与 ChatGPT Work 的付费用户将进行一次额度重置，并写明会在一小时内生效。",
+    "scope": "Codex 与 ChatGPT Work 付费用户",
+    "windowStart": "2026-07-21T16:47:15Z",
+    "windowEnd": "2026-07-21T17:47:15Z",
+    "confidence": "高",
+    "reason": "原帖直接写明将在一小时内生效；这是对原文时间窗的换算，不是对未来重置的保证。"
+  },
+  "nextForecast": {
+    "label": "暂不预测下一次重置",
+    "reason": "没有新的、可核验的公开重置信号时，不根据历史频率臆测具体日期。"
+  },
+  "predictionRules": [
+    { "signal": "原帖明确写“下一小时内”或等价表述", "output": "发帖时间起 0–60 分钟", "confidence": "高" },
+    { "signal": "原帖明确写“数小时后”或等价表述", "output": "发帖时间起 2–6 小时", "confidence": "中" },
+    { "signal": "未承诺重置，只提到产品或系统压力", "output": "不预测具体时间", "confidence": "不适用" }
+  ]
+}

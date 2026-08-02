@@ -1,6 +1,6 @@
 ---
 const links = [
-  ['首页', '/'], ['AI 快讯', '/news/'], ['GPT 价格地图', '/prices/'], ['AI 工具对比', '/tools/'], ['涨价降价记录', '/history/'], ['关于本站', '/about/']
+  ['首页', '/'], ['AI 快讯', '/news/'], ['GPT 价格地图', '/prices/'], ['额度观察', '/quota-watch/'], ['AI 工具对比', '/tools/'], ['涨价降价记录', '/history/'], ['关于本站', '/about/']
 ];
 const current = Astro.url.pathname;
 const path = (value: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${value === '/' ? '/' : value}`;

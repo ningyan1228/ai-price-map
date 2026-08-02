@@ -38,11 +38,17 @@ const apiBase = import.meta.env.PUBLIC_API_BASE || '';
       if (!response.ok) throw new Error('实时接口不可用');
       const payload = await response.json();
       if (!payload.rates?.CNY) throw new Error('实时汇率格式异常');
+      const unsupportedCurrencies = new Set();
       currentData = data.map((price) => {
+        if (price.currency !== 'USD' && !payload.rates[price.currency]) {
+          unsupportedCurrencies.add(price.currency);
+          return price;
+        }
         const usd = price.currency === 'USD' ? price.price : price.price / payload.rates[price.currency];
         return { ...price, usd: Number(usd.toFixed(2)), cny: Number((usd * payload.rates.CNY).toFixed(0)), verifiedAt: payload.date };
       });
-      liveStatus.textContent = `实时汇率折算 · 参考日 ${payload.date} · ${payload.cached ? '缓存数据' : '刚刚更新'}`;
+      const fallback = unsupportedCurrencies.size ? ` · ${[...unsupportedCurrencies].join('、')} 使用页面快照` : '';
+      liveStatus.textContent = `实时汇率折算 · 参考日 ${payload.date} · ${payload.cached ? '缓存数据' : '刚刚更新'}${fallback}`;
       render();
     } catch { liveStatus.textContent = '实时汇率暂不可用，已显示页面快照数据。'; }
   }
