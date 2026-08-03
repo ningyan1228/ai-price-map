@@ -1,0 +1,85 @@
+{
+  "updatedAt": "2026-08-03",
+  "positioning": "AI 订阅合规省钱雷达：只比较公开价格、官方年付折扣和已核验支付权益；不提供跨区、代充、规避税费或绕过平台规则的方案。",
+  "tools": [
+    {
+      "id": "chatgpt-plus",
+      "name": "ChatGPT Plus",
+      "monthlyPrice": 20,
+      "annualPrice": null,
+      "defaultSelected": true,
+      "sourceName": "OpenAI ChatGPT Pricing",
+      "sourceUrl": "https://openai.com/chatgpt/pricing/",
+      "note": "公开网页月费；税费和可用套餐以账户结算页为准。"
+    },
+    {
+      "id": "claude-pro",
+      "name": "Claude Pro",
+      "monthlyPrice": 20,
+      "annualPrice": 200,
+      "defaultSelected": true,
+      "sourceName": "Anthropic Pricing",
+      "sourceUrl": "https://www.anthropic.com/pricing",
+      "note": "公开网页月费为 US$20；年付 US$200，折合约 US$16.67/月，税费可能另计。"
+    },
+    {
+      "id": "cursor-pro",
+      "name": "Cursor Pro",
+      "monthlyPrice": 20,
+      "annualPrice": null,
+      "defaultSelected": true,
+      "sourceName": "Cursor Pricing",
+      "sourceUrl": "https://cursor.com/pricing",
+      "note": "仅建议通过 Cursor 官方网站直接购买；Cursor 明确提示第三方订阅可能未经授权或存在欺诈风险。"
+    },
+    {
+      "id": "midjourney-basic",
+      "name": "Midjourney Basic",
+      "monthlyPrice": 10,
+      "annualPrice": 96,
+      "defaultSelected": true,
+      "sourceName": "Midjourney Plans",
+      "sourceUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+      "note": "公开月付 US$10；年付 US$96，折合 US$8/月。"
+    },
+    {
+      "id": "elevenlabs-starter",
+      "name": "ElevenLabs Starter",
+      "monthlyPrice": 5,
+      "annualPrice": null,
+      "defaultSelected": false,
+      "sourceName": "ElevenLabs Pricing",
+      "sourceUrl": "https://elevenlabs.io/pricing",
+      "note": "公开起始套餐参考价；产品、用量和地区税费会影响最终价格。"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "plasma-one-core",
+      "name": "Plasma One Core",
+      "status": "需核验资格",
+      "annualFee": 199,
+      "cashbackRate": 0.05,
+      "monthlyEligibleSpendCap": 500,
+      "eligibleToolIds": ["chatgpt-plus", "claude-pro", "cursor-pro", "elevenlabs-starter"],
+      "coverage": "公开条款列举 OpenAI、Anthropic、Cursor、OpenRouter、ElevenLabs 等符合条件的直接商户；实际商户识别及资格以发卡方结算为准。",
+      "availability": "活动、发卡资格和可用地区有限制；相关条款列举美国、加拿大、英国、阿联酋等资格条件，使用前须自行确认最新条款与居住地资格。",
+      "exclusions": "App Store、Google Play、礼品卡、转售商/中介交易不计入活动；不得为获取权益而改变账户地区或违反平台规则。",
+      "sourceName": "Plasma One Core / AI Cashback terms",
+      "sourceUrl": "https://www.plasma.org/personal/core",
+      "termsUrl": "https://www.plasma.org/tr/aicashback"
+    }
+  ],
+  "watchlist": [
+    {
+      "name": "Bybit Card",
+      "status": "暂不纳入测算",
+      "reason": "尚未在本站完成 AI 商户返现、地区资格、费用和持续有效期的官方条款核验。"
+    },
+    {
+      "name": "Crypto Card",
+      "status": "暂不纳入测算",
+      "reason": "名称不对应单一可核验产品；在明确发卡方与官方条款前不作推荐或节省承诺。"
+    }
+  ]
+}

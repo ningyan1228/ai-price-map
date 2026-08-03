@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import stack from '../../../data/saving-stack.json';
+
+const dollars = (value: number) => `US$${value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+---
+<BaseLayout title="AI 省钱雷达｜AI价格地图" description="用公开价格、官方年付折扣和已核验支付权益，比较 AI 订阅成本。个人账单仅保存在浏览器本地。">
+  <section class="grid-bg border-b border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <p class="eyebrow">AI Saving Stack</p>
+      <h1 class="mt-2 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl">AI 订阅合规省钱雷达</h1>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">用官方年付、已核验权益和真实费用做成本比较。少花冤枉钱，不碰跨区、代充、虚假地址或规避税费。</p>
+      <p class="mt-5 text-sm text-slate-500">数据更新：{stack.updatedAt} · 不含税费、汇率波动和用量超额费用</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8" data-saving-stack>
+    <div class="grid gap-6 xl:grid-cols-[1.05fr_.95fr]">
+      <article class="panel p-5 sm:p-7">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p class="eyebrow">Local calculator</p>
+            <h2 class="mt-2 text-2xl font-bold text-white">我的 AI 订阅账单</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-400">选择你正在付费的工具；设置会保存在当前浏览器，不上传到本站或服务器。</p>
+          </div>
+          <span class="chip text-emerald-300">仅本地保存</span>
+        </div>
+        <div class="mt-6 space-y-3">
+          {stack.tools.map((tool) => <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/45 p-4 transition hover:border-slate-700">
+            <input class="mt-1 h-4 w-4 accent-cyan-400" type="checkbox" value={tool.id} checked={tool.defaultSelected} data-tool-toggle />
+            <span class="min-w-0 flex-1"><span class="flex flex-wrap items-center justify-between gap-2"><strong class="text-white">{tool.name}</strong><span class="font-semibold text-cyan-200">{dollars(tool.monthlyPrice)}/月</span></span><span class="mt-1 block text-xs leading-5 text-slate-500">{tool.note} <a class="text-cyan-300 hover:underline" href={tool.sourceUrl} target="_blank" rel="noreferrer">{tool.sourceName} ↗</a></span></span>
+          </label>)}
+          <label class="flex items-center justify-between gap-4 rounded-xl border border-dashed border-slate-700 p-4">
+            <span><strong class="text-sm text-white">其他 AI / SaaS 月费</strong><span class="mt-1 block text-xs text-slate-500">只计入你的账单；不自动假设任何折扣或返现。</span></span>
+            <span class="flex shrink-0 items-center gap-2 text-sm text-slate-400">US$<input aria-label="其他 AI 工具月费" data-custom-spend type="number" min="0" step="0.01" value="0" class="w-24 rounded-lg border border-slate-700 bg-slate-950 px-2 py-2 text-right text-white outline-none ring-cyan-400 focus:ring-2" /></span>
+          </label>
+        </div>
+      </article>
+
+      <aside class="space-y-4">
+        <article class="panel p-5 sm:p-7" aria-live="polite">
+          <p class="eyebrow">Cost snapshot</p>
+          <p class="mt-2 text-sm text-slate-400">当前选项的月付基线</p>
+          <p class="mt-1 text-4xl font-bold text-white" data-monthly-total>US$0</p>
+          <div class="mt-6 grid grid-cols-2 gap-3 border-t border-slate-800 pt-5 text-sm"><div><p class="text-slate-500">月付全年</p><p class="mt-1 font-semibold text-white" data-annual-monthly>US$0</p></div><div><p class="text-slate-500">可用年付后</p><p class="mt-1 font-semibold text-emerald-300" data-annual-plan>US$0</p></div></div>
+          <p class="mt-4 text-xs leading-5 text-slate-500" data-annual-note>选择含官方年付的工具后，会按公开年付价格估算。</p>
+        </article>
+        <article class="rounded-2xl border border-cyan-500/25 bg-cyan-500/5 p-5 sm:p-7">
+          <p class="eyebrow">Known savings</p>
+          <h2 class="mt-2 text-xl font-bold text-white">已核验的官方年付</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-300" data-official-saving>请选择含年付套餐的工具。</p>
+          <p class="mt-3 text-xs leading-5 text-slate-500">年付意味着提前支付一年；只有确认会持续使用时才值得选择。</p>
+        </article>
+      </aside>
+    </div>
+
+    <section class="mt-10" aria-labelledby="payment-benefit-title">
+      <div class="flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow">Verified payment benefit</p><h2 id="payment-benefit-title" class="section-title mt-2">支付权益：把年费也算进去</h2></div><p class="max-w-2xl text-sm leading-6 text-slate-400">返现不是折扣。测算会扣除年费，且只对已被公开条款列为符合条件的直接商户消费计入。</p></div>
+      <div class="mt-6 grid gap-5 lg:grid-cols-2">
+        {stack.paymentMethods.map((method) => <article class="panel p-5 sm:p-6" data-method={method.id}>
+          <div class="flex flex-wrap items-start justify-between gap-3"><div><h3 class="text-xl font-bold text-white">{method.name}</h3><p class="mt-1 text-sm text-amber-300">{method.status} · 使用前确认最新资格</p></div><span class="chip">{(method.cashbackRate * 100).toFixed(0)}% AI 返现宣传</span></div>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3"><div><p class="text-xs text-slate-500">年费</p><p class="mt-1 text-lg font-semibold text-white">{dollars(method.annualFee)}</p></div><div><p class="text-xs text-slate-500">每月符合条件上限</p><p class="mt-1 text-lg font-semibold text-white">{dollars(method.monthlyEligibleSpendCap)}</p></div><div><p class="text-xs text-slate-500">当前估算净影响</p><p class="mt-1 text-lg font-semibold" data-method-impact>选择工具后计算</p></div></div>
+          <div class="mt-6 rounded-xl border border-slate-800 bg-slate-950/55 p-4 text-sm leading-6 text-slate-400"><p>{method.coverage}</p><p class="mt-3 text-amber-100">资格：{method.availability}</p><p class="mt-3 text-rose-200">不计入：{method.exclusions}</p></div>
+          <p class="mt-4 text-xs text-slate-500">来源：<a href={method.sourceUrl} target="_blank" rel="noreferrer" class="text-cyan-300 hover:underline">{method.sourceName} ↗</a> · <a href={method.termsUrl} target="_blank" rel="noreferrer" class="text-cyan-300 hover:underline">活动条款 ↗</a></p>
+        </article>)}
+        <article class="panel p-5 sm:p-6"><p class="eyebrow">Verification first</p><h3 class="mt-2 text-xl font-bold text-white">未核验产品不做排名</h3><div class="mt-5 space-y-4">{stack.watchlist.map(item => <div class="rounded-xl border border-slate-800 bg-slate-950/45 p-4"><div class="flex items-center justify-between gap-3"><strong class="text-white">{item.name}</strong><span class="chip">{item.status}</span></div><p class="mt-2 text-sm leading-6 text-slate-400">{item.reason}</p></div>)}</div><p class="mt-5 text-xs leading-5 text-slate-500">本站不会因为联盟佣金或未经核验的营销内容，承诺“最低成本”或夸大节省比例。</p></article>
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
+      <article class="panel p-5 sm:p-6"><p class="eyebrow">Deal watch</p><h2 class="mt-2 text-2xl font-bold text-white">优惠观察规则</h2><ul class="mt-5 space-y-3 text-sm leading-6 text-slate-300"><li>只收录服务方、发卡方或其公开条款能核验的优惠；每条都应标明开始/结束时间、地区资格和来源。</li><li>没有明确的结束日期、商户范围或资格说明时，标记为“待核验”，不计入计算器。</li><li>社交媒体线索可以进入观察队列，但必须回链至原帖或官方页面，不能当作已生效优惠。</li></ul></article>
+      <aside class="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-5 sm:p-6"><p class="eyebrow text-amber-200">Important</p><h2 class="mt-2 text-xl font-bold text-amber-50">实际支付以前台结算为准</h2><p class="mt-3 text-sm leading-6 text-amber-100/80">地区、税费、汇率、商户类别、支付通道和资格都会改变最终金额。计算器是预算工具，不是金融建议、价格承诺或支付指引。</p></aside>
+    </section>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ tools: stack.tools, methods: stack.paymentMethods }}>
+  const root = document.querySelector('[data-saving-stack]');
+  if (root) {
+    const storageKey = 'ai-price-map:saving-stack:v1';
+    const toggles = [...root.querySelectorAll('[data-tool-toggle]')];
+    const customInput = root.querySelector('[data-custom-spend]');
+    const money = (value) => `US$${Number(value || 0).toLocaleString('en-US', { maximumFractionDigits: 2 })}`;
+    const saved = (() => { try { return JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch { return {}; } })();
+    toggles.forEach((toggle) => { if (typeof saved[toggle.value] === 'boolean') toggle.checked = saved[toggle.value]; });
+    if (Number.isFinite(Number(saved.custom))) customInput.value = Math.max(0, Number(saved.custom));
+
+    const calculate = () => {
+      const selected = tools.filter((tool) => root.querySelector(`[data-tool-toggle][value="${tool.id}"]`).checked);
+      const custom = Math.max(0, Number(customInput.value) || 0);
+      const monthly = selected.reduce((sum, tool) => sum + tool.monthlyPrice, custom);
+      const annualMonthly = monthly * 12;
+      const annualPlan = selected.reduce((sum, tool) => sum + (tool.annualPrice ?? tool.monthlyPrice * 12), custom * 12);
+      const officialSaving = annualMonthly - annualPlan;
+
+      root.querySelector('[data-monthly-total]').textContent = money(monthly);
+      root.querySelector('[data-annual-monthly]').textContent = money(annualMonthly);
+      root.querySelector('[data-annual-plan]').textContent = money(annualPlan);
+      root.querySelector('[data-annual-note]').textContent = officialSaving > 0
+        ? `按所选官方年付套餐，全年可少付约 ${money(officialSaving)}；未提供年付的工具仍按月付计算。`
+        : '当前选择没有可计入的官方年付折扣；未提供年付的工具仍按月付计算。';
+      root.querySelector('[data-official-saving]').textContent = officialSaving > 0
+        ? `所选套餐中，官方年付相较连续月付合计节省约 ${money(officialSaving)}/年。`
+        : '当前未选择有公开年付价格的套餐，或没有可确认的年付节省。';
+
+      methods.forEach((method) => {
+        const eligibleMonthly = selected.filter((tool) => method.eligibleToolIds.includes(tool.id)).reduce((sum, tool) => sum + tool.monthlyPrice, 0);
+        const annualCashback = Math.min(eligibleMonthly, method.monthlyEligibleSpendCap) * 12 * method.cashbackRate;
+        const annualWithMethod = annualMonthly - annualCashback + method.annualFee;
+        const netImpact = annualMonthly - annualWithMethod;
+        const node = root.querySelector(`[data-method="${method.id}"] [data-method-impact]`);
+        node.textContent = eligibleMonthly === 0 ? '暂无符合条件消费' : `${netImpact >= 0 ? '节省 ' : '多花 '}${money(Math.abs(netImpact))}/年`;
+        node.className = `mt-1 text-lg font-semibold ${netImpact >= 0 ? 'text-emerald-300' : 'text-rose-300'}`;
+      });
+      const nextSaved = Object.fromEntries(toggles.map((toggle) => [toggle.value, toggle.checked]));
+      nextSaved.custom = custom;
+      try { localStorage.setItem(storageKey, JSON.stringify(nextSaved)); } catch { /* 浏览器禁用本地存储时仍可使用计算器 */ }
+    };
+    toggles.forEach((toggle) => toggle.addEventListener('change', calculate));
+    customInput.addEventListener('input', calculate);
+    calculate();
+  }
+</script>

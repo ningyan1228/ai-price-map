@@ -52,6 +52,7 @@ pnpm preview
 | `tools.json` | 工具中立对比资料 | `slug`、`name`、`free`、`monthlyPrice`、`strength`、`audience`、`url` |
 | `news.json` | 审核后的新闻摘要 | `slug`、`title`、`source`、`sourceUrl`、`publishedAt`、`companies`、`category`、`summary`、`importance` |
 | `sources.json` | 新闻/价格来源清单 | `name`、`type`、`url`、`notes` |
+| `saving-stack.json` | 合规省钱雷达的工具价格、年付与支付权益 | `tools`、`paymentMethods`、`watchlist`、`sourceUrl`、`annualFee`、`cashbackRate` |
 
 ### 手动新增地区
 
@@ -66,6 +67,13 @@ pnpm preview
 - 工具：向 `tools.json` 追加资料，价格使用“起”或“因地区而异”等保守表述，不夸大功能。
 - 新闻：向 `news.json` 追加不超过 120 字的中文摘要。分类限于模型发布、产品更新、价格调整、融资、政策、应用案例、开源项目；必须保留 `sourceUrl`。
 - RSS：编辑 `scripts/update-news.ts` 的 `feeds`。仅添加官方或明确允许聚合的公开 RSS；抓取器仅读取标题、日期、摘要、链接，并按链接去重。
+
+### 维护「省钱雷达」
+
+- 在 `data/saving-stack.json` 中维护工具的公开月费、年付价格、官方来源与核验说明。没有官方年付价格时填写 `null`，不要推测折扣。
+- 支付卡或返现权益必须同时具备可公开访问的官方权益页、活动条款、费用和地区资格信息；计算器必须把年费、返现上限和不适用的商户排除项算进去。
+- 用户的账单选择仅通过浏览器 `localStorage` 保存，不会发送到 API 服务器，也没有登录、数据库或用户档案。
+- 不收录跨区、代充、礼品卡套利、虚假地址、规避税费或违反平台规则的做法；无法完整核验的产品放入 `watchlist`，不要推荐或给出节省承诺。
 
 ### 自动更新
 

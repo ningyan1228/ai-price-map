@@ -4,6 +4,5 @@
   {"priceId":"jp-plus","date":"2026-08-01","price":3000,"currency":"JPY","cny":147,"changeType":"汇率","source":"公开汇率参考","note":"本周累计约上涨 3.2%。"},
   {"priceId":"us-plus","date":"2026-07-01","price":20,"currency":"USD","cny":143,"changeType":"汇率","source":"公开汇率参考","note":"美元兑人民币变动。"},
   {"priceId":"us-plus","date":"2026-08-01","price":20,"currency":"USD","cny":144,"changeType":"汇率","source":"公开汇率参考","note":"折算值更新。"},
-  {"priceId":"tr-plus","date":"2026-07-01","price":499.99,"currency":"TRY","cny":94,"changeType":"汇率","source":"公开汇率参考","note":"里拉汇率变动。"},
-  {"priceId":"tr-plus","date":"2026-08-01","price":499.99,"currency":"TRY","cny":89,"changeType":"汇率","source":"公开汇率参考","note":"人民币成本下降。"}
+  {"priceId":"tr-plus","date":"2026-06-14","price":999.99,"currency":"TRY","cny":142,"changeType":"数据修正","source":"Technopat（土耳其应用商店公开价报道）","note":"根据公开报道将土耳其区应用商店参考价修正为 999.99 TRY；此前 499.99 TRY 快照已撤销，人民币值仅作参考。"}
 ]
