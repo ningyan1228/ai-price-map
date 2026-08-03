@@ -1,4 +1,4 @@
-# AI价格地图（AI Price Map）
+# AI情报地图（AI Intelligence Map）
 
 一个面向中文用户的静态优先 AI 情报与订阅价格查询站：**每天看 AI 新闻，订 GPT 前先查价格。**
 
@@ -50,7 +50,7 @@ pnpm preview
 | `prices.json` | 各地区套餐当前快照 | `id`、`regionSlug`、`plan`、`price`、`currency`、`usd`、`cny`、`taxNote`、`channelNote`、`source`、`verifiedAt`、`confidence` |
 | `price-history.json` | 每个套餐的变动记录 | `priceId`、`date`、`price`、`cny`、`changeType`、`source`、`note` |
 | `tools.json` | 工具中立对比资料 | `slug`、`name`、`free`、`monthlyPrice`、`strength`、`audience`、`url` |
-| `news.json` | 审核后的新闻摘要 | `slug`、`title`、`source`、`sourceUrl`、`publishedAt`、`companies`、`category`、`summary`、`importance` |
+| `news.json` | 审核后的新闻摘要 | `slug`、`title`、`source`、`sourceUrl`、`publishedAt`、`market`、`companies`、`category`、`summary`、`importance` |
 | `sources.json` | 新闻/价格来源清单 | `name`、`type`、`url`、`notes` |
 | `saving-stack.json` | 合规省钱雷达的工具价格、年付与支付权益 | `tools`、`paymentMethods`、`watchlist`、`sourceUrl`、`annualFee`、`cashbackRate` |
 
@@ -65,7 +65,7 @@ pnpm preview
 ### 手动新增工具和新闻源
 
 - 工具：向 `tools.json` 追加资料，价格使用“起”或“因地区而异”等保守表述，不夸大功能。
-- 新闻：向 `news.json` 追加不超过 120 字的中文摘要。分类限于模型发布、产品更新、价格调整、融资、政策、应用案例、开源项目；必须保留 `sourceUrl`。
+- 新闻：向 `news.json` 追加不超过 120 字的中文摘要。全球 AI 新闻使用模型发布、产品更新、价格调整、融资、政策、应用案例、开源项目等分类；大陆新闻可使用时政、财经、社会等来源分类。必须填写 `market`（`global` 或 `mainland`）、`sourceUrl` 与真实 `publishedAt`。
 - RSS：编辑 `scripts/update-news.ts` 的 `feeds`。仅添加官方或明确允许聚合的公开 RSS；抓取器仅读取标题、日期、摘要、链接，并按链接去重。
 
 ### 维护「省钱雷达」
@@ -79,7 +79,7 @@ pnpm preview
 
 ```bash
 pnpm update:rates  # Frankfurter/ECB 公开参考汇率；成功后更新 USD/CNY 折算
-pnpm update:news   # 公开 RSS；失败时保留当前 news.json
+pnpm update:news   # 公开 RSS；无发布日期的条目会跳过，失败时保留当前 news.json
 ```
 
 `.github/workflows/update-data.yml` 每天 UTC 01:20 运行这两个命令并在有变更时提交。注意：自动抓取的摘要是规则截断；如需更自然的中文摘要，请在提交前人工审核，或在你自己的服务器中接入有授权的 AI API，绝不把密钥提交到仓库。

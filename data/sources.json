@@ -1,6 +1,9 @@
 [
   {"name":"OpenAI Pricing","type":"价格","url":"https://openai.com/chatgpt/pricing/","notes":"优先使用公开定价页，地区差异以结算页为准。"},
-  {"name":"OpenAI News","type":"新闻","url":"https://openai.com/news/","feedUrl":"https://openai.com/news/rss.xml","tags":["OpenAI"],"enabled":true,"notes":"OpenAI 官方公开 RSS，仅聚合标题、日期和链接。"},
+  {"name":"OpenAI News","type":"新闻","market":"global","url":"https://openai.com/news/","feedUrl":"https://openai.com/news/rss.xml","tags":["OpenAI"],"enabled":true,"notes":"OpenAI 官方公开 RSS，仅聚合标题、日期和链接。"},
   {"name":"Anthropic News","type":"新闻","url":"https://www.anthropic.com/news","notes":"官方公开新闻。"},
-  {"name":"Google AI Blog","type":"新闻","url":"https://blog.google/technology/ai/","feedUrl":"https://blog.google/technology/ai/rss/","tags":["Google"],"enabled":true,"notes":"Google 官方 AI 博客 RSS，仅聚合标题、日期和链接。"}
+  {"name":"Google AI Blog","type":"新闻","market":"global","url":"https://blog.google/technology/ai/","feedUrl":"https://blog.google/technology/ai/rss/","tags":["Google"],"enabled":true,"notes":"Google 官方 AI 博客 RSS，仅聚合标题、日期和链接。"},
+  {"name":"中国新闻网·时政","type":"新闻","market":"mainland","defaultCategory":"时政","url":"https://www.chinanews.com.cn/china/","feedUrl":"https://www.chinanews.com.cn/rss/china.xml","tags":["中国大陆","时政"],"enabled":true,"notes":"中国新闻网公开列出的 RSS；仅聚合标题、日期、链接和本站短摘要。"},
+  {"name":"中国新闻网·财经","type":"新闻","market":"mainland","defaultCategory":"财经","url":"https://www.chinanews.com.cn/finance/","feedUrl":"https://www.chinanews.com.cn/rss/finance.xml","tags":["中国大陆","财经"],"enabled":true,"notes":"中国新闻网公开列出的 RSS；仅聚合标题、日期、链接和本站短摘要。"},
+  {"name":"中国新闻网·社会","type":"新闻","market":"mainland","defaultCategory":"社会","url":"https://www.chinanews.com.cn/society/","feedUrl":"https://www.chinanews.com.cn/rss/society.xml","tags":["中国大陆","社会"],"enabled":true,"notes":"中国新闻网公开列出的 RSS；仅聚合标题、日期、链接和本站短摘要。"}
 ]
